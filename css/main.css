@@ -1,0 +1,28 @@
+#arialConverted, #arialConverter {
+    border: solid 1px #CCC;
+    border-radius: 5px;
+    font-size: 12pt;
+    background: #FFF;
+    padding: 8px;
+    min-height: 300px;
+}
+h1, h2, h3, h4, h5, h6, p {
+    font-family: Arial, sans-serif;
+}
+h1 {
+    font-weight: bold;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 32px;
+    line-height: 32px;
+    background-color: #e3f2fd;
+}
+nav a {
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: none;
+}
