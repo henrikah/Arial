@@ -6,7 +6,7 @@ on:
   push:
     branches: [ master ]
   pull_request:
-#    branches: [ master ]
+    branches: [ master ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -23,8 +23,8 @@ jobs:
       - name: SFTP Deploy
         uses: wlixcc/SFTP-Deploy-Action@v1.2.1
         with:
-          username: digitald
-          server: ftp.digitaldomination.org
+          username: ${{ secrets.SFTP_USERNAME }}
+          server: ${{ secrets.SFTP_DOMAIN_NAME }}
           port: 22 # default is 22
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
 
@@ -32,7 +32,7 @@ jobs:
           # will put all file under this path
           local_path: ./* # default is ./*
           # files will copy to under remote_path
-          remote_path: /home/digitald/domains/webfrontmedia.no/private_html/arial/
+          remote_path: ${{ secrets.SFTP_ARIAL_PATH }}
 
           # sftp args
           args: '-o ConnectTimeout=5'
