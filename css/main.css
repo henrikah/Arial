@@ -1,10 +1,11 @@
 #arialConverted, #arialConverter {
     border: solid 1px #CCC;
     border-radius: 5px;
-    font-size: 12pt;
+    font-size: 13px;
     background: #FFF;
     padding: 8px;
     min-height: 300px;
+    line-height: 1.6;
 }
 h1, h2, h3, h4, h5, h6, p, div {
     font-family: Arial, sans-serif;
