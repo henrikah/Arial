@@ -20,6 +20,7 @@ h1 {
     height: 32px;
     line-height: 32px;
     background-color: #e3f2fd;
+    font-size: 10px;
 }
 nav a {
     text-decoration: none;
