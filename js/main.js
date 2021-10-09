@@ -8,7 +8,8 @@ window.addEventListener('DOMContentLoaded', () => {
     arialConverter.addEventListener('input', () => {
         arialConverted.innerHTML = arialConverter.innerHTML.replace(/(<\/?(?:a|p|ul|li|br)[^>]*>)|<[^>]+>/ig, '$1');
         arialConverted.innerHTML = arialConverted.innerHTML.replace(/(<\/?pre.*?>)/ig, '');
-        arialConverted.innerHTML = arialConverted.innerHTML.replace(/(style=".+?")/ig, '');
+        arialConverted.innerHTML = arialConverted.innerHTML.replace(/<(p|ul|li|br)(.*?)>/ig, '<$1>');
+        arialConverted.innerHTML = arialConverted.innerHTML.replace(/<a.*? href="(.+?)".*?>/ig, '<a href="$1">');
         toggleButtonToPrimary(copyButton);
     })
     clearSpan.addEventListener('click', () => {
