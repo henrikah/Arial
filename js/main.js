@@ -5,11 +5,15 @@ window.addEventListener('DOMContentLoaded', () => {
     let copySpan = document.getElementById('copy');
     let clearSpan = document.getElementById('clear');
     const startConverterText = arialConverter.innerHTML;
+    const cleanHTML = (text) => {
+        text = text.replace(/(<\/?(?:a|p|ul|li|br)[^>]*>)|<[^>]+>/ig, '$1');
+        text = text.replace(/(<\/?pre.*?>)/ig, '');
+        text = text.replace(/<(p|ul|li|br)(.*?)>/ig, '<$1>');
+        text = text.replace(/<a.*? href="(.+?)".*?>/ig, '<a href="$1">');
+        return text;
+    }
     arialConverter.addEventListener('input', () => {
-        arialConverted.innerHTML = arialConverter.innerHTML.replace(/(<\/?(?:a|p|ul|li|br)[^>]*>)|<[^>]+>/ig, '$1');
-        arialConverted.innerHTML = arialConverted.innerHTML.replace(/(<\/?pre.*?>)/ig, '');
-        arialConverted.innerHTML = arialConverted.innerHTML.replace(/<(p|ul|li|br)(.*?)>/ig, '<$1>');
-        arialConverted.innerHTML = arialConverted.innerHTML.replace(/<a.*? href="(.+?)".*?>/ig, '<a href="$1">');
+        arialConverted.innerHTML = cleanHTML(arialConverter.innerHTML);
         toggleButtonToPrimary(copyButton);
     })
     clearSpan.addEventListener('click', () => {
